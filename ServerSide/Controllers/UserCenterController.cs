@@ -6,13 +6,13 @@ using System.Web.Mvc;
 
 namespace ServerSide.Controllers
 {
-    public class HomeController : Controller
+    public class UserCenterController : Controller
     {
+        // GET: UserCenter
+        
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
-            return View();
+            return Content("1");
         }
     }
 }

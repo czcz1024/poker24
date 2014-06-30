@@ -7,8 +7,13 @@
   <author href="http://cordova.io" email="dev@cordova.apache.org">
     Apache Cordova Team
   </author>
-  <content src="index.html" />
+  <content src="list.html" />
   <access origin="*" />
-  <vs:features />
   <preference name="SplashScreen" value="screen" />
+  <preference name="Fullscreen" value="false" />
+  <preference name="Orientation" value="portrait" />
+  <vs:features />
+  <vs:platformSpecificValues>
+    <vs:platformSpecificWidget platformName="windows8" />
+  </vs:platformSpecificValues>
 </widget>

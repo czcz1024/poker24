@@ -115,18 +115,35 @@
     <Folder Include="res\screens\wp8\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bootstrap\css\bootstrap-responsive.css" />
-    <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
-    <Content Include="bootstrap\css\bootstrap.css" />
-    <Content Include="bootstrap\css\bootstrap.min.css" />
-    <Content Include="bootstrap\img\glyphicons-halflings-white.png" />
-    <Content Include="bootstrap\img\glyphicons-halflings.png" />
-    <Content Include="bootstrap\js\bootstrap.js" />
-    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="app\app.js" />
+    <Content Include="app\login.js" />
+    <Content Include="app\rules.js" />
+    <Content Include="scripts\hubs.js" />
+    <Content Include="scripts\jquery.signalR-2.1.0.js" />
+    <Content Include="tab.html" />
     <Content Include="config.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="index.html" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="css\common.css" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="list.html" />
+    <Content Include="login.html" />
+    <Content Include="packages.config" />
+    <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\framework.js" />
+    <Content Include="scripts\framework.test.js" />
     <Content Include="scripts\index.js" />
     <Content Include="css\index.css" />
     <Content Include="res\cert\android\ant.properties" />
@@ -170,6 +187,12 @@
     <Content Include="res\screens\ios\screen-iphone-portrait-2x.png" />
     <Content Include="res\screens\windows8\splashscreen.png" />
     <Content Include="res\screens\wp8\screen-portrait.jpg" />
+    <Content Include="scripts\jquery-1.9.0.intellisense.js" />
+    <Content Include="scripts\jquery-2.1.1-vsdoc.js" />
+    <Content Include="scripts\jquery-2.1.1.js" />
+    <Content Include="scripts\jquery-2.1.1.min.js" />
+    <Content Include="scripts\jquery-2.1.1.min.map" />
+    <Content Include="scripts\jquery.signalR-2.1.0.min.js" />
   </ItemGroup>
   <PropertyGroup>
     <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>

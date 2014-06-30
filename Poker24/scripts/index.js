@@ -1,25 +1,35 @@
-﻿// For an introduction to the Blank template, see the following documentation:
-// http://go.microsoft.com/fwlink/?LinkID=397704
-// To debug code on page load in Ripple or on Android devices/emulators: launch your app, set breakpoints, 
-// and then run "window.location.reload()" in the JavaScript Console.
-(function () {
-    "use strict";
+﻿app.initPage = function() {
+    $("#loginBtn").click(function() {
+        app.home.login();
+    });
 
-    document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
+    $("#regBtn").click(function() {
+        app.home.register();
+    });
+};
 
-    function onDeviceReady() {
-        // Handle the Cordova pause and resume events
-        document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
-        
-        // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
-    };
+app.home = {
+    
+};
 
-    function onPause() {
-        // TODO: This application has been suspended. Save application state here.
-    };
+app.home.login = function() {
+    var uname = $("#loginUserName").val();
+    var pass = $("#loginPassword").val();
 
-    function onResume() {
-        // TODO: This application has been reactivated. Restore application state here.
-    };
-} )();
+    checkPassword(uname, pass);
+};
+app.home.register = function () { };
+
+function checkPassword(uname, pass) {
+    $.ajax("http://221.204.241.69:99/api/User/Login?username=" + uname + "&password=" + pass, {
+        type: "get",
+        //datatype:"jsonp",
+        crossDomain: true,
+        success: function (result) {
+            alert(result);
+        },
+        error: function() {
+            alert("error");
+        }
+    });
+}
