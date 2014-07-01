@@ -175,7 +175,7 @@
         </script>
         <div ng-if="data.gameState==0">
             <button ng-if="data.you.ready==false" class="btn" ng-click="ready()">准备</button>
-            <button ng-if="data.you.ready==true" class="btn">wait</button>
+            <button ng-if="data.you.ready==true" class="btn">等</button>
         </div>
         <div ng-if="data.gameState==1">
             <div ng-if="data.you.inturn==true">
@@ -193,7 +193,7 @@
     
     <script src="cordova.js"></script>
     <script src="Scripts/jquery-2.1.1.min.js"></script>
-    <script src="Scripts/jquery.signalR-2.1.0.js"></script>
+    <script src="Scripts/jquery.signalR-2.1.0.min.js"></script>
     <script src="scripts/hubs.js"></script>
     <script src="app/app.js"></script>
     <script src="app/rules.js"></script>

@@ -2,9 +2,9 @@
 var app = {
     //apiBaseUrl:"http://localhost:1234/"
 	
-    apiBaseUrl:"http://127.0.0.1:1432/"
+    //apiBaseUrl:"http://127.0.0.1:1432/"
 
-	//apiBaseUrl:"http://221.204.241.69:99/"
+	apiBaseUrl:"http://221.204.241.69:99/"
 };
 
 $(function () {

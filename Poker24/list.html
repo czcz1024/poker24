@@ -58,7 +58,7 @@
                 <a class="btn "><i class="fa fa-users fa-2x"></i><br />好友</a>
             </li>
             <li>
-                <a class="btn "><i class="fa fa-refresh fa-2x"></i><br />刷新</a>
+                <a class="btn" ng-click="refresh()"><i class="fa fa-refresh fa-2x"></i><br />刷新</a>
             </li>
             <li>
                 <a onclick="quit()" class="btn ">
@@ -93,6 +93,12 @@
                 //createTab();
                 alert("尚未开放");
             });
+
+            $scope.refresh = function() {
+                $http.get(url).success(function (data) {
+                    $scope.data = data;
+                });
+            };
         });
 
         function goTab(item) {
