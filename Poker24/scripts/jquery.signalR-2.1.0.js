@@ -1055,10 +1055,7 @@
                 data: {},
                 xhrFields: { withCredentials: connection.withCredentials },
                 contentType: connection.contentType,
-                dataType: connection.ajaxDataType,
-                error: function(a, b) {
-                    alert(a + "," + b);
-                }
+                dataType: connection.ajaxDataType
             }, options);
             return $.ajax(op1);
         },

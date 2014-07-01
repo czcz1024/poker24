@@ -187,7 +187,7 @@
             </div>
         </div>
         <div ng-if="data.gameState==2">
-            <button class="btn" onclick="location.href='list.html'">完</button>
+            <button class="btn" onclick="gameover()">完</button>
         </div>
     </div>
     <script src="scripts/angular.js"></script>
@@ -419,6 +419,11 @@
 
         function g() {
             $.connection.tabHub.server.game(game.tabid);
+        }
+
+        function gameover() {
+            $.connection.hub.stop();
+            location.href = 'list.html';
         }
     </script>
 </body>
