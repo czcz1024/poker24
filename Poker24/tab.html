@@ -165,20 +165,21 @@
     <div class="may" ng-if="data.showmay==true">
         <div class="mayoption" ng-repeat="item in data.may">
             {{item.Text}}
-            <button onclick="push2server(this)" v="{{item.Value}}">choose</button>
+            <button onclick="push2server(this)" v="{{item.Value}}" class="btn">选则</button>
         </div>
+        <button onclick="$('.may').hide()">取消</button>
     </div>
     <div class="options">
         <script>
             document.write("w:" + window.screen.width + ",h:" + window.screen.height);
         </script>
         <div ng-if="data.gameState==0">
-            <button ng-if="data.you.ready==false" ng-click="ready()">准备</button>
-            <button ng-if="data.you.ready==true">wait</button>
+            <button ng-if="data.you.ready==false" class="btn" ng-click="ready()">准备</button>
+            <button ng-if="data.you.ready==true" class="btn">wait</button>
         </div>
         <div ng-if="data.gameState==1">
             <div ng-if="data.you.inturn==true">
-                <button ng-click="push()" ng-if="data.hasbigger==true" class="btn btn-primary">出</button>
+                <button ng-click="push()" ng-if="data.hasbigger==true" class="btn">出</button>
                 <button ng-click="pass()" ng-if="data.hasbigger==false" class="btn">过</button>
             </div>
             <div ng-if="data.you.inturn==false">
@@ -277,10 +278,10 @@
                 console.log('SignalR error: ' + error);
             });
             $.connection.hub.url = url + "signalr";
-            alert($.connection.hub.url);
+            
             var client = $.connection.tabHub.client;
             setClientFunc(client,$scope);
-            $.connection.hub.start();
+            $.connection.hub.start({jsonp:true});
 
             return proxy;
         }
