@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html ng-app="poke24">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
@@ -15,153 +15,161 @@
         }
     </style>
 </head>
-    <body ng-controller="loginCtrl">
+<body ng-controller="loginCtrl">
         
-        <div>
-            <h1>24</h1>
-        </div>
-        <div>
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#loginf" data-toggle="tab" onfocus="this.blur();">登陆</a></li>
-                <li><a href="#register" data-toggle="tab" onfocus="this.blur();">注册</a></li>
-            </ul>
+    <div>
+        <h1>24</h1>
+    </div>
+    <div>
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#loginf" data-toggle="tab" onfocus="this.blur();">登陆</a></li>
+            <li><a href="#register" data-toggle="tab" onfocus="this.blur();">注册</a></li>
+        </ul>
 
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div class="tab-pane active" id="loginf">
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="loginf">
                     
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                <input id="loginName" class="form-control" placeholder="用户名" />
-                            </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input id="loginName" class="form-control" placeholder="用户名" />
                         </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-key"></i></div>
-                                <input id="loginPass" type="password" class="form-control" placeholder="密码" />
-                            </div>
-                            </div>
-                        <div class="form-group">
-                            <button id="login" class="btn btn-primary pull-right">
-                                <i class="fa fa-sign-in"></i>&nbsp;&nbsp;登录
-                            </button>
-                        </div>
-                    <div>
-                        测试期间不允许注册账号
-                        <br />
-                        用 a到j的一个字符 (用户名密码相同)登录
                     </div>
-                </div>
-                <div class="tab-pane" id="register">
-                    
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                <input id="regName" class="form-control" placeholder="用户名" />
-                            </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                            <input id="loginPass" type="password" class="form-control" placeholder="密码" />
                         </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-key"></i></div>
-                                <input id="regPass" type="password" class="form-control" placeholder="密码" />
-                            </div>
                         </div>
-                        <!--<div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-key"></i></div>
-                                <input id="regNick" class="form-control" placeholder="昵称" />
-                            </div>
-                        </div>-->
-                        <div class="form-group">
-                            <button id="reg" class="btn btn-warning pull-right">
-                                <i class="fa fa-android"></i>&nbsp;&nbsp;注册
-                            </button>
-                        </div>
-                    
+                    <div class="form-group">
+                        <button id="login" class="btn btn-primary pull-right">
+                            <i class="fa fa-sign-in"></i>&nbsp;&nbsp;登录
+                        </button>
+                    </div>
+                <div>
+                    测试期间不允许注册账号
+                    <br />
+                    用 a到j的一个字符 (用户名密码相同)登录
                 </div>
             </div>
+            <div class="tab-pane" id="register">
+                    
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input id="regName" class="form-control" placeholder="用户名" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                            <input id="regPass" type="password" class="form-control" placeholder="密码" />
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                            <input id="regNick" class="form-control" placeholder="昵称" />
+                        </div>
+                    </div>-->
+                    <div class="form-group">
+                        <button id="reg" class="btn btn-warning pull-right">
+                            <i class="fa fa-android"></i>&nbsp;&nbsp;注册
+                        </button>
+                    </div>
+                    
+            </div>
         </div>
-        <script src="cordova.js"></script>
-        <script src="scripts/angular.min.js"></script>
-        <script src="Scripts/jquery-2.1.1.min.js"></script>
-        <script src="Scripts/bootstrap.min.js"></script>
+    </div>
         
-        <script src="app/app.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/jquery-2.1.1.js"></script>
+    <script src="app/app.js"></script>
         
-        <script>
-            var apps = angular.module("poke24", []);
-            apps.controller("loginCtrl", function ($scope) {
-                var uid = localStorage.getItem("uid");
-                if (uid != null) {
-                    goTabList();
-                }
+    <script>
 
-                $("#login").click(function () {
-                    var uname = $("#loginName").val();
-                    var pass = $("#loginPass").val();
-                    checkLogin(uname, pass);
-                });
+            
+        var apps = angular.module("poke24", []);
+        apps.controller("loginCtrl", function ($scope) {
+            var uid = localStorage.getItem("uid");
+            if (uid != null) {
+                goTabList();
+                return;
+            }
 
-                $("#reg").click(function () {
-                    var uname = $("#regName").val();
-                    var pass = $("#regPass").val();
-
-                    if (checkReg(uname, pass)) {
-                        goReg(uname, pass);
-                    }
-                });
+            
+            $("#login").click(function() {
+                var uname = $("#loginName").val();
+                var pass = $("#loginPass").val();
+                checkLogin(uname, pass);
             });
+            
 
-            function checkLogin(uname, pass) {
-                var url = app.apiBaseUrl + "api/user/login";
-                $.ajax(url, {
-                    type: "post",
-                    crossDomain: true,
-                    data: {
-                        Username: uname,
-                        Password: pass
-                    },
-                    success: function (data) {
-                        if (data == "00000000-0000-0000-0000-000000000000") {
-                            alert("错误");
-                        } else {
-                            localStorage.setItem("uid", data);
-                            goTabList();
-                        }
+            //$("#reg").click(function() {
+            //    var uname = $("#regName").val();
+            //    var pass = $("#regPass").val();
+
+            //    if (checkReg(uname, pass)) {
+            //        goReg(uname, pass);
+            //    }
+            //});
+        });
+            
+
+        function checkLogin(uname, pass) {
+            var url = app.apiBaseUrl + "api/user/login";
+            console.log(url);
+            $.ajax(url, {
+                type: "post",
+                crossDomain: true,
+                data: {
+                    Username: uname,
+                    Password: pass
+                },
+                success: function (data) {
+                    if (data == "00000000-0000-0000-0000-000000000000") {
+                        alert("错误");
+                    } else {
+                        localStorage.setItem("uid", data);
+                        goTabList();
                     }
-                });
-            }
+                },
+                error: function(a, b) {
+                    alert(JSON.stringify(a) + "," + b);
+                }
+            });
+        }
 
-            function checkReg(uname, pass) {
-                return uname != "" && pass != "";
-            }
+        function checkReg(uname, pass) {
+            return uname != "" && pass != "";
+        }
 
-            function goReg(uname, pass) {
-                var url = app.apiBaseUrl + "api/user/register";
-                $.ajax(url, {
-                    type: "post",
-                    crossDomain: true,
-                    data: {
-                        UserName: uname,
-                        Password: pass,
-                        NickName: uname
-                    },
-                    success: function (data) {
-                        if (data == "00000000-0000-0000-0000-000000000000") {
-                            alert("尚未开放");
-                        } else {
-                            localStorage.setItem("uid", data);
-                            //goTabList();
-                        }
-                    }
-                });
-            }
+        //function goReg(uname, pass) {
+        //    var url = app.apiBaseUrl + "api/user/register";
+        //    $.ajax(url, {
+        //        type: "post",
+        //        crossDomain: true,
+        //        data: {
+        //            UserName: uname,
+        //            Password: pass,
+        //            NickName: uname
+        //        },
+        //        success: function (data) {
+        //            if (data == "00000000-0000-0000-0000-000000000000") {
+        //                alert("尚未开放");
+        //            } else {
+        //                localStorage.setItem("uid", data);
+        //                //goTabList();
+        //            }
+        //        }
+        //    });
+        //}
 
-            function goTabList() {
-                location.href = "list.html";
-            }
-        </script>
+        function goTabList() {
+            location.href = "list.html";
+        }
+    </script>
         
-    </body>
+</body>
 </html>

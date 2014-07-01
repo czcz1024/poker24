@@ -133,7 +133,7 @@
             }
         }
     </style>
-    <script src="Scripts/angular.min.js"></script>
+    
 </head>
 <body ng-controller="body">
     <div class="players">
@@ -190,14 +190,13 @@
             <button class="btn" onclick="location.href='list.html'">完</button>
         </div>
     </div>
-    
-    <script src="cordova.js"></script>
-    <script src="Scripts/jquery-2.1.1.min.js"></script>
-    <script src="Scripts/jquery.signalR-2.1.0.min.js"></script>
-    <script src="scripts/hubs.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/jquery-2.1.1.js"></script>
     <script src="app/app.js"></script>
+    <script src="scripts/jquery.signalR-2.1.0.js"></script>
+    <script src="scripts/hubs.js"></script>
     <script src="app/rules.js"></script>
-
+    
     <script>
         var state = {
             WaitForUserReady: 0,
@@ -225,6 +224,8 @@
             realpush: [],
             hasbigger:false
         };
+
+        
         var apps = angular.module("poke", []);
 
         apps.controller("body", function ($scope) {
@@ -238,20 +239,20 @@
             }
             game.uid = uid;
             game.tabid = tabid;
-            var proxy=connectToServer($scope);
-            $scope.update = function (data) {
+
+            
+            var proxy = connectToServer($scope);
+            $scope.update = function(data) {
                 $scope.data = data;
                 $scope.$apply();
             };
 
             $scope.ready = function() {
-                proxy.server.ready(tabid,uid);
+                proxy.server.ready(tabid, uid);
             };
 
             $scope.push = function() {
                 var cards = $(".inhand .choose");
-                
-
                 pushCards($scope, proxy, cards);
             };
 
@@ -259,8 +260,8 @@
                 proxy.server.pass(tabid, uid);
             };
         });
-
         
+
 
         function update(ctrl, data) {
             var obj = document.querySelector("[ng-controller=" + ctrl + "]");
@@ -269,21 +270,23 @@
         }
         function connectToServer($scope) {
             //var url = "http://localhost:1432/";
+            
             var url = app.apiBaseUrl;
             $.connection.hub.qs = { "tab": game.tabid, "uid": game.uid };
 
             var proxy = $.connection.tabHub;
             game.proxy = proxy;
-            $.connection.hub.error(function (error) {
+            $.connection.hub.error(function(error) {
                 console.log('SignalR error: ' + error);
             });
             $.connection.hub.url = url + "signalr";
-            
+
             var client = $.connection.tabHub.client;
-            setClientFunc(client,$scope);
-            $.connection.hub.start({jsonp:true});
+            setClientFunc(client, $scope);
+            $.connection.hub.start({ jsonp: true });
 
             return proxy;
+            
         }
 
         function setClientFunc(client, $scope) {

@@ -115,9 +115,14 @@
     <Folder Include="res\screens\wp8\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="a.html" />
     <Content Include="app\app.js" />
     <Content Include="app\login.js" />
     <Content Include="app\rules.js" />
+    <Content Include="scripts\angular-sanitize.js" />
+    <Content Include="scripts\angular-scenario.js" />
+    <Content Include="scripts\angular-touch.js" />
+    <Content Include="scripts\angular.js" />
     <Content Include="scripts\hubs.js" />
     <Content Include="scripts\jquery.signalR-2.1.0.js" />
     <Content Include="tab.html" />

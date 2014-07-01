@@ -12,7 +12,13 @@
   <preference name="SplashScreen" value="screen" />
   <preference name="Fullscreen" value="false" />
   <preference name="Orientation" value="portrait" />
-  <vs:features />
+  <vs:features>
+    <vs:feature>org.apache.cordova.network-information@0.2.8</vs:feature>
+    <vs:feature>org.apache.cordova.device-orientation@0.3.6</vs:feature>
+    <vs:feature>org.apache.cordova.console@0.2.8</vs:feature>
+    <vs:feature>org.apache.cordova.device@0.2.9</vs:feature>
+    <vs:feature>org.apache.cordova.inappbrowser@0.4.0</vs:feature>
+  </vs:features>
   <vs:platformSpecificValues>
     <vs:platformSpecificWidget platformName="windows8" />
   </vs:platformSpecificValues>
