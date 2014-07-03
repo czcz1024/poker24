@@ -44,9 +44,12 @@
                     }
     </style>
 </head>
-<body>
+<body ng-controller="list">
     <button id="create" class="btn btn-primary disabled">新建</button>
-    <div ng-controller="list">
+     <div id="loading">
+            <i class="fa fa-spin fa-spinner fa-4x"></i>
+        </div>
+    <div >
         <ul id="container" class="list-group">
             <li class="list-group-item" ng-repeat="item in data" v="{{item.Id}}" onclick="goTab(this)">
                 <span class="badge">{{item.AlReady}}</span>
@@ -57,10 +60,10 @@
     <div class="tools">
         <ul>
             <li>
-                <a class="btn "><i class="fa fa-cog fa-2x"></i><br />设置</a>
+                <a class="btn " href="info.html"><i class="fa fa-cog fa-2x"></i><br />设置</a>
             </li>
             <li>
-                <a class="btn "><i class="fa fa-users fa-2x"></i><br />好友</a>
+                <a class="btn disabled"><i class="fa fa-users fa-2x"></i><br />好友</a>
             </li>
             <li>
                 <a class="btn" ng-click="refresh()"><i class="fa fa-refresh fa-2x"></i><br />刷新</a>
@@ -91,11 +94,14 @@
 
             $http.get(url).success(function (data) {
                 $scope.data = data;
+                $("#loading").hide();
             });
 
-            $scope.refresh = function () {
+            $scope.refresh = function () {                
+                $("#loading").show();
                 $http.get(url).success(function (data) {
                     $scope.data = data;
+                    $("#loading").hide();
                 });
             };
         });
