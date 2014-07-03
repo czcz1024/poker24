@@ -112,10 +112,10 @@
     <Folder Include="res\screens\wp8\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="a.html" />
     <Content Include="app\app.js" />
     <Content Include="app\login.js" />
     <Content Include="app\rules.js" />
+    <Content Include="info.html" />
     <Content Include="res\icons\ios\icon-40-2x.png" />
     <Content Include="res\icons\ios\icon-40.png" />
     <Content Include="res\icons\ios\icon-50-2x.png" />
